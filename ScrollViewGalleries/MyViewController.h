@@ -10,4 +10,6 @@
 
 @interface MyViewController : UIViewController
 
+@property UIImageView *imageReceived;
+
 @end

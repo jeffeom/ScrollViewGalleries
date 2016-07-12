@@ -7,10 +7,12 @@
 //
 
 #import "ViewController.h"
+#import "MyViewController.h"
 
 @interface ViewController ()
 
 @property (strong, nonatomic) IBOutlet UIScrollView *myScrollView;
+@property UIImageView *imageToSend;
 
 @end
 
@@ -19,12 +21,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    self.imageToSend = [[UIImageView alloc] init];
     
-    self.myScrollView = [[UIScrollView alloc] initWithFrame:self.view.frame];
+//    self.myScrollView = [[UIScrollView alloc] initWithFrame:self.view.frame];
     
     UIImageView *image1 = [[UIImageView alloc] initWithImage: [UIImage imageNamed:@"Lighthouse-in-Field"]];
     UIImageView *image2 = [[UIImageView alloc] initWithImage: [UIImage imageNamed:@"Lighthouse-night"]];
     UIImageView *image3 = [[UIImageView alloc] initWithImage: [UIImage imageNamed:@"Lighthouse-zoomed"]];
+    
+    image1.userInteractionEnabled = YES;
+    image2.userInteractionEnabled = YES;
+    image3.userInteractionEnabled = YES;
     
     image1.translatesAutoresizingMaskIntoConstraints = NO;
     image2.translatesAutoresizingMaskIntoConstraints = NO;
@@ -34,12 +41,8 @@
     [self.myScrollView addSubview:image2];
     [self.myScrollView addSubview:image3];
     
-    
     self.myScrollView.pagingEnabled = YES;
     
-    self.myScrollView.translatesAutoresizingMaskIntoConstraints = YES;
-    [self.view addSubview:self.myScrollView];
-
     //image1
     NSLayoutConstraint *image1Left = [NSLayoutConstraint constraintWithItem:image1
                                                                        attribute:NSLayoutAttributeLeft
@@ -126,9 +129,38 @@
     
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+}
+
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+    [self.myScrollView setContentSize: self.view.frame.size];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+
+- (IBAction)imageTapped:(id)sender {
+    UITapGestureRecognizer *tap = (UITapGestureRecognizer *)sender;
+    
+    UIView *view = tap.view;
+    CGPoint location = [tap locationInView:view];
+    
+    self.imageToSend = (UIImageView *)[view hitTest:location withEvent:nil];
+
+    [self performSegueWithIdentifier:@"showDetail" sender:sender];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if ([segue.identifier isEqualToString:@"showDetail"]){
+        MyViewController *myVC = segue.destinationViewController;
+        myVC.imageReceived = self.imageToSend;
+    }
 }
 
 @end

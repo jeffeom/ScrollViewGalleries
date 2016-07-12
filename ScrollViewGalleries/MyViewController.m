@@ -20,6 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.myImageView = self.imageReceived;
     [self zoomingScrollView];
 }
 
@@ -35,7 +36,6 @@
     self.myScrollView.maximumZoomScale = 4.0;
     self.myScrollView.zoomScale = 1.0;
     
-    
     [self.myScrollView addSubview:self.myImageView];
     [self.view addSubview:self.myScrollView];
 }
@@ -43,15 +43,5 @@
 -(UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView{
     return self.myImageView;
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
