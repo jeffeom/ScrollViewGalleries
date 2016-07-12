@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="pM5-3v-7Mk">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -37,5 +38,54 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
+        <!--My View Controller-->
+        <scene sceneID="xDP-Nv-mkE">
+            <objects>
+                <viewController id="pM5-3v-7Mk" customClass="MyViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zWB-9N-QTu"/>
+                        <viewControllerLayoutGuide type="bottom" id="604-nL-sAR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="XMF-LO-Axz">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YYo-Hs-7FQ">
+                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Lighthouse-zoomed" translatesAutoresizingMaskIntoConstraints="NO" id="FuP-G4-aWU">
+                                        <rect key="frame" x="0.0" y="0.0" width="450" height="900"/>
+                                        <gestureRecognizers/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="FuP-G4-aWU" secondAttribute="baseline" id="2eT-Mt-1Tx"/>
+                                    <constraint firstItem="FuP-G4-aWU" firstAttribute="top" secondItem="YYo-Hs-7FQ" secondAttribute="top" id="fUF-TZ-XTj"/>
+                                    <constraint firstItem="FuP-G4-aWU" firstAttribute="leading" secondItem="YYo-Hs-7FQ" secondAttribute="leading" id="iJK-Ya-bWF"/>
+                                    <constraint firstAttribute="trailing" secondItem="FuP-G4-aWU" secondAttribute="trailing" constant="-130" id="mNJ-aX-dE2"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="YYo-Hs-7FQ" secondAttribute="trailing" id="2cI-0s-HNa"/>
+                            <constraint firstItem="604-nL-sAR" firstAttribute="top" secondItem="YYo-Hs-7FQ" secondAttribute="bottom" id="AP1-L9-igb"/>
+                            <constraint firstItem="YYo-Hs-7FQ" firstAttribute="top" secondItem="zWB-9N-QTu" secondAttribute="bottom" id="cnu-5b-Hv6"/>
+                            <constraint firstItem="YYo-Hs-7FQ" firstAttribute="leading" secondItem="XMF-LO-Axz" secondAttribute="leading" id="sPA-6F-xaA"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="myImageView" destination="FuP-G4-aWU" id="MqC-Ww-6et"/>
+                        <outlet property="myScrollView" destination="YYo-Hs-7FQ" id="DRx-rT-pP3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zwu-Jk-vzq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="875" y="-41"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="Lighthouse-zoomed" width="450" height="900"/>
+    </resources>
 </document>

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		405558B71D344FF1000025F1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 405558B61D344FF1000025F1 /* Images.xcassets */; };
+		405558BA1D3467F9000025F1 /* MyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 405558B91D3467F9000025F1 /* MyViewController.m */; };
 		4095E3681D344F72006C8BDE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4095E3671D344F72006C8BDE /* main.m */; };
 		4095E36B1D344F72006C8BDE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4095E36A1D344F72006C8BDE /* AppDelegate.m */; };
 		4095E36E1D344F72006C8BDE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4095E36D1D344F72006C8BDE /* ViewController.m */; };
@@ -36,6 +37,8 @@
 
 /* Begin PBXFileReference section */
 		405558B61D344FF1000025F1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		405558B81D3467F9000025F1 /* MyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyViewController.h; sourceTree = "<group>"; };
+		405558B91D3467F9000025F1 /* MyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyViewController.m; sourceTree = "<group>"; };
 		4095E3631D344F72006C8BDE /* ScrollViewGalleries.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScrollViewGalleries.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4095E3671D344F72006C8BDE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4095E3691D344F72006C8BDE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -106,6 +109,8 @@
 				4095E36C1D344F72006C8BDE /* ViewController.h */,
 				4095E36D1D344F72006C8BDE /* ViewController.m */,
 				4095E36F1D344F72006C8BDE /* Main.storyboard */,
+				405558B81D3467F9000025F1 /* MyViewController.h */,
+				405558B91D3467F9000025F1 /* MyViewController.m */,
 				405558B61D344FF1000025F1 /* Images.xcassets */,
 				4095E3741D344F72006C8BDE /* LaunchScreen.storyboard */,
 				4095E3771D344F72006C8BDE /* Info.plist */,
@@ -272,6 +277,7 @@
 			files = (
 				4095E36E1D344F72006C8BDE /* ViewController.m in Sources */,
 				4095E36B1D344F72006C8BDE /* AppDelegate.m in Sources */,
+				405558BA1D3467F9000025F1 /* MyViewController.m in Sources */,
 				4095E3681D344F72006C8BDE /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -91,14 +91,6 @@
     [self.view addConstraints: @[image2Left, image2Top, image2Bottom]];
     
     //image3
-    NSLayoutConstraint *image3Height = [NSLayoutConstraint constraintWithItem:image3
-                                                                  attribute:NSLayoutAttributeHeight
-                                                                  relatedBy:NSLayoutRelationEqual
-                                                                     toItem:self.view
-                                                                  attribute:NSLayoutAttributeHeight
-                                                                 multiplier:1.0
-                                                                   constant:0];
-    
     NSLayoutConstraint *image3Left = [NSLayoutConstraint constraintWithItem:image3
                                                                   attribute:NSLayoutAttributeLeft
                                                                   relatedBy:NSLayoutRelationEqual
@@ -130,7 +122,7 @@
                                                                    multiplier:1.0
                                                                      constant:0];
     
-    [self.view addConstraints: @[image3Height, image3Left, image3Right, image3Top, image3Bottom]];
+    [self.view addConstraints: @[image3Left, image3Right, image3Top, image3Bottom]];
     
 }
 
